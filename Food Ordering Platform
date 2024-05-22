@@ -1,0 +1,510 @@
+
+#This is our First Semester Project for our COurse Programming Fundamentals(PF)
+#Food Ordering FLatform with Special Features.
+
+####################################################################### FOOD ORDERING FLATFORM ######################################################
+
+#include<stdio.h>
+#include<conio.h>// for getch() function
+#include<iostream> //cls function
+#include<windows.h> //sleep() function
+
+void timer(int check);
+
+int main() {
+
+	int area,restaurant,types=0,types1=0,types2=0,types3=0,types4=0,check,z,k,news,count=0;
+	char address[100];
+	
+	int items[5]= {0,0,0,0,0};
+	int itemscold[3]={0,0,0};
+	int price[8]={250,350,450,550,50};
+	int quantity[5]= {0,0,0,0,0};
+	int bill[5]={0,0,0,0,0};
+	
+	int items1[7]={0,0,0,0,0,0,0};	
+	int itemscold1[3]={0,0,0};
+	int quantity1[7]={0,0,0,0,0,0,0};
+	int bill1[7]={0,0,0,0,0,0,0};
+	int price1[10]={200,300,400,500,600,700,50};
+	
+	int items2[9]={0,0,0,0,0,0,0,0,0};
+	int itemscold2[3]={0,0,0};
+	int quantity2[9]={0,0,0,0,0,0,0,0,0};
+	int bill2[9];
+	int price2[6]={100,200,300,400,500,50};
+	
+	int items3[5]={0,0,0,0,0};
+	int itemscold3[3]={0,0,0};
+	int quantity3[5]={0,0,0,0,0};
+	int bill3[5]={0,0,0,0,0};
+	int price3[5]={100,200,300,400,50};
+	
+	int items4[5]={0,0,0,0,0};
+	int itemscold4[3]={0,0,0};
+	int quantity4[5]={0,0,0,0,0};
+	int bill4[5]={0,0,0,0,0};
+	int price4[5]={100,200,300,400,80};
+	
+/*
+	printf("\nFOOD ORDERING FLATFROM\n");
+	printf("**********************\n");
+	
+
+	printf("\nEnter Your Area:\n");
+
+	printf("\npress 0 for Gulshan-e-Iqbal\npress 1 for Buffer Zone\npress 2 for North Karachi\npress 3 for Gulistan-e-Johar\npress 4 for Five Star\n");
+	scanf("%d",&area);
+	
+	fflush(stdin);
+	printf("Enter Your Full Address (Without Spaces):\n");
+	gets(address);
+	fflush(stdin);
+	
+	system("cls");
+	*/
+	for( z=1;z<=2;){
+		
+	printf("\nNow Enter Restaurants:\n");
+
+	printf("\nPress 0 for KFC\npress 1 for Macdonalds\nPress 2 for Ginsoy\nPress 3 for Cafe Roofyard\nPress 4 for Lala Quetta Hotel and Limca\n");
+	scanf("%d",&restaurant);
+	
+	
+	switch(restaurant) {
+		case 0:// for kfc
+			printf("\nPress 0 for Zinger Burger\nPress 1 for Wings Bucket\nPress 2 for ZingerRatha\nPress 3 for Fries\nPress 4 for Colddrink\n\n");
+			printf("\nHow many types of items you want to order = ");
+			scanf("%d",&types);
+			for(int i=0; i<types; i++) {
+
+				printf("\nEnter Item code = ");
+				scanf("%d",&items[i]);
+				
+				printf("Enter It`s Quantity = ");
+				scanf("%d",&quantity[i]);
+				
+				if(items[i]==4) {
+					printf("\nPress 5 for Pepsi\nPress 6 for Dew\nPress 7 for Sprite\n");
+					for(int j=1;j<=quantity[i];j++){
+					printf("\nEnter %d cold drink code = ",j);
+					scanf("%d",&itemscold[j]);
+					bill[i]=price[itemscold[j]]*quantity[i];
+					continue;
+				}
+				}
+				bill[i]=price[items[i]]*quantity[i];
+			}
+		break;
+		
+		case 1:
+			printf("\nPress 0 for Macchiken \nPress 1 for HamBurger\nPress 2 for MacCrispy\nPress 3 for BigMac\nPress 4 for HappyMeal (ChickenBurger + Fries + SliceJuice + freeToy)\nPress 5 for Fries\nPress 6 for Cold Drink\n");
+			printf("\nHow many types of items you want to order = ");
+			scanf("%d",&types1);
+			for(int g=0;g<types1;g++)
+			{
+				printf("\nEnter Item Code = ");
+				scanf("%d",&items1[g]);
+				
+				printf("Enter its Quantity = ");
+				scanf("%d",&quantity1[g]);
+				
+				if(items1[g]==6)
+				{
+					printf("\nPress 7 for Pepsi\nPress 8 for Marinda\nPress 9 for Sprite\n");
+					for(int j=1;j<=quantity1[g];j++){
+					printf("\nEnter %d cold drink code = ",j);
+					scanf("%d",&itemscold1[j]);
+					bill1[g]=price1[itemscold1[j]]*quantity1[g];
+					continue;
+					
+				}
+				}
+				bill1[g]=price1[items1[g]]*quantity1[g];	
+			}
+			break;
+	
+		
+		case 2://for ginsoy
+			printf("\nPress 0 for Singaporian Rice \nPress 1 for DrumSticks\nPress 2 for Chicken Shashlik\nPress 3 for Chowmein Rice\nPress 4 for Fish Nuggets\nPress 5 for Cold Drink\n");
+			printf("\nHow many types of items you want to order = ");
+			scanf("%d",&types2);
+			for(int i=0;i<types2;i++)
+			{
+				printf("\nEnter Item Code = ");
+				scanf("%d",&items2[i]);
+				
+				printf("Enter its Quantity = ");
+				scanf("%d",&quantity2[i]);
+				
+				if(items2[i]==5)
+				{
+					printf("\nPress 6 for Pepsi\nPress 7 for Marinda\nPress 8 for Sprite\n");
+					for(int j=1;j<=quantity2[i];j++){
+					printf("\nEnter %d cold drink code = ",j);
+					scanf("%d",&itemscold2[j]);
+					bill2[i]=price2[itemscold2[j]]*quantity2[i];
+					continue;
+				}
+				}
+				bill2[i]=price2[items2[i]]*quantity2[i];
+			}
+			
+		break;
+		
+		case 3://for Cafe roofyard
+		   	printf("\nPress 0 for Broast (Fries+Coleslaw) \nPress 1 for Burgers (Fries+Coleslaw)\nPress 2 for Club Sandwich\nPress 3 for Beef Steak\nPress 4 for Cold Drinks\n");
+			printf("\nHow many types of items you want to order = ");
+			scanf("%d",&types3);
+			for(int i=0;i<types3;i++)
+			{
+				printf("\nEnter Item Code = ");
+				scanf("%d",&items3[i]);
+				
+				printf("Enter its Quantity = ");
+				scanf("%d",&quantity3[i]);
+				
+				if(items3[i]==4)
+				{
+					printf("\nPress 5 for Pepsi\nPress 6 for Marinda\nPress 7 for Sprite\n");
+					for(int j=1;j<=quantity3[i];j++){
+					printf("\nEnter %d cold drink code = ",j);
+					scanf("%d",&itemscold3[j]);
+					bill3[i]=price3[itemscold3[j]]*quantity3[i];
+					continue;
+				}
+				}
+				bill3[i]=price3[items3[i]]*quantity3[i];
+			}
+		break;	
+		
+		case 4:
+			printf("\nPress 0 for Chai\nPress 1 for Paratha\nPress 2 for Channa\nPress 3 for Omelete\nPress 4 for Limca\n");
+			printf("\nHow many types of items you want to order = ");
+			scanf("%d",&types4);
+			for(int i=0;i<types4;i++)
+			{
+				printf("\nEnter Item Code = ");
+				scanf("%d",&items4[i]);
+				
+				printf("Enter its Quantity = ");
+				scanf("%d",&quantity4[i]);
+				
+				if(items4[i]==4)
+				{
+					printf("\nPress 5 for Lemon\nPress 6 for Blueberry\nPress 7 for Green Milk\n");
+					for(int j=1;j<=quantity4[i];j++){
+					printf("\nEnter %d limca drink code = ",j);
+					scanf("%d",&itemscold4[j]);
+					bill4[i]=price4[itemscold4[j]]*quantity3[i];
+					continue;
+				}
+				}
+				bill4[i]=price4[items4[i]]*quantity4[i];
+			}
+		break;	
+		
+	}
+	
+	
+
+	printf("\nThis Order has Been Added to your Cart\n");
+	printf("**************************************\n");	
+	
+	if(count==1){
+		Sleep(5);
+		system("cls");
+		break;
+	}
+	printf("\nPress 1 to order more\nPress 0 for Checkout\n");
+	scanf("%d",&check);
+	
+	if(check==0){
+		break;
+	}else {
+		news=restaurant;
+		z++;
+		count++;
+	}
+	system("cls");
+}
+
+    int st4,gst4,tb4,sum4=0;
+	int st3,gst3,tb3,sum3=0;
+	int st2,gst2,tb2,sum2=0;
+	int st1,gst1,tb1,sum1=0;
+	int st,gst,tb,sum=0;
+	
+	system("cls");
+	
+	printf("\t\t\tYou have Ordered\n");
+	printf("\t\t\t****************\n\n");
+	Sleep(3000);
+	
+	char kfc[5][30]={"Zinger Burger", "Wings Bucket ","ZingerRatha  ","Fries        ","Cold Drink   "};
+	char mac[7][50]={"MacChicken","HamBurger ","McCrispy  ","BigMac    ","HappyMeal ","Fries     ","ColdDrink "};
+	char gin[6][30]={"Singaporian Rice","DrumSticks      ","Chiken Shashlik ","Chowmein Rice   ","Fish nuggets    ","Cold drink      "};
+	char cafe[5][50]={"Broast   ","Burgers  ","Steak    ","Sandwitch","Colddrink"};
+	char hotel[5][50]={"Chai   ","Paratha","Channa ","Omelete","Limca  "};
+	
+	if(check==0){
+		k=2;
+	}else{
+		k=1;
+	}
+	
+	for(int a=k;a<=2;a++){
+	if(k==1){
+		if(a==1 && k==1){
+			restaurant=restaurant;
+		}else if(a==2 && k==1){
+			restaurant=news;
+		}
+		
+	}else if(k==2){
+		restaurant=restaurant;
+		
+	}
+	switch(restaurant){
+			
+		case 0:
+			for(int i=0;i<types;i++){
+			printf("\n%s\tQt:%d\t%d",kfc[items[i]],quantity[i],bill[i]);
+			}
+			for(int i=0;i<types;i++){
+				sum=sum+bill[i];
+			}
+			printf("\n---------------------------------------");
+			printf("\nBill  \t\t\t%d\n",sum);
+			
+			st=sum*17/100;
+			printf("Sales Tax  \t\t %d",st);
+		
+			gst=sum*13/100;
+			printf("\nGenrel Sales Tax \t %d",gst);
+			
+			tb=sum+gst+st;
+			printf("\nThe Total Bill is \t%d",tb);
+			
+			// Sleep(5000);
+			printf("\n---------------------------------------\n");
+		break;
+		
+		case 1:
+			for(int h=0;h<types1;h++){
+			printf("\n%s\tQt:%d\t%d",mac[items1[h]],quantity1[h],bill1[h]);
+			}
+			for(int h=0;h<types1;h++){
+				sum1=sum1+bill1[h];
+			}
+			printf("\n---------------------------------------");
+			printf("\nBill  \t\t\t%d\n",sum1);
+			
+			st1=sum1*17/100;
+			printf("Sales Tax  \t\t %d",st1);
+		
+			gst1=sum1*13/100;
+			printf("\nGenrel Sales Tax \t %d",gst1);
+			
+			tb1=sum1+gst1+st1;
+			printf("\nThe Total Bill is \t%d",tb1);
+			
+			//Sleep(5000);
+			printf("\n---------------------------------------\n");
+		break;
+		
+		case 2:
+			for(int i=0;i<types2;i++){
+			printf("\n%s\tQt:%d\t%d",gin[items2[i]],quantity2[i],bill2[i]);
+			}
+			for(int i=0;i<types2;i++){
+				sum2=sum2+bill2[i];
+			}
+			printf("\n---------------------------------------");
+			printf("\nBill  \t\t\t\t%d\n",sum2);
+			
+			st2=sum2*17/100;
+			printf("Sales Tax  \t\t\t %d",st2);
+		
+			gst2=sum2*13/100;
+			printf("\nGenrel Sales Tax \t\t %d",gst2);
+			
+			tb2=sum2+gst2+st2;
+			printf("\nThe Total Bill is \t\t%d",tb2);
+			
+			
+		//	Sleep(5000);
+			printf("\n---------------------------------------\n");
+		break;
+		
+		case 3:
+			for(int i=0;i<types3;i++){
+			printf("\n%s\tQt:%d\t%d",cafe[items3[i]],quantity3[i],bill3[i]);
+			}
+			for(int i=0;i<types3;i++){
+				sum3=sum3+bill3[i];
+			}
+			printf("\n-----------------------------");
+			printf("\nBill  \t\t \t %d\n",sum3);
+			
+			st3=sum3*17/100;
+			printf("Sales Tax  \t\t  %d",st3);
+		
+			gst3=sum3*13/100;
+			printf("\nGenrel Sales Tax \t  %d",gst3);
+			
+			tb3=sum3+gst3+st3;
+			printf("\nThe Total Bill is \t %d",tb3);
+			
+			//Sleep(5000);
+			printf("\n-----------------------------\n");
+		break;
+		
+		case 4:
+			for(int f=0;f<types4;f++){
+			printf("\n%s\t\tQt:%d\t%d",hotel[items4[f]],quantity4[f],bill4[f]);
+			}
+			for(int f=0;f<types4;f++){
+				sum4=sum4+bill4[f];
+			}
+			printf("\n-----------------------------");
+			printf("\nBill  \t\t \t %d\n",sum4);
+			
+			st4=sum4*17/100;
+			printf("Sales Tax  \t\t  %d",st4);
+		
+			 gst4=sum4*13/100;
+			printf("\nGenrel Sales Tax \t  %d",gst4);
+			
+			tb4=sum4+gst4+st4;
+			printf("\nThe Total Bill is \t %d",tb4);
+		
+			//Sleep(5000);
+			printf("\n-----------------------------\n");
+		break;		
+		
+}
+	
+}
+	printf("\n\nPress Enter to continue:\n");
+	getch();
+	
+
+	int pay;
+	long int code;
+	char name[20],name2[20];
+	
+	system("cls");
+	
+	printf("Which Method would you like to Pay:\n\nPress 1 for Cash On Delivery\nPress 2 for Card Payment\n");
+	scanf("%d",&pay);
+	if(pay==2){
+		printf("\nEnter Card Details\nEnter Your First Name = ");
+		scanf("%s",&name);
+		printf("\nEnter Your Last Name = ");
+		scanf("%s",name2);
+		printf("\nEnter Your Swift Code = ");
+		scanf("%s",&code);
+	}
+	
+	
+	int m1=30,m2=45,s=0;
+	system("cls");
+	
+	
+	char mess[100];
+	
+	if(check==0){
+		printf("\nYour Delivery Charges are 75 Rs\n");
+		printf("\nYour Order will be delivered in around %d mins\n",m1);
+		printf("\n\nYour Rider details:\nName=Nadeem Raja\nContact.No=03351220324\n\n");
+	}else{
+		printf("\nYour Delivery Charges are 100 Rs\n");
+		printf("\nYour Order will be delivered in around %d mins\n",m2);
+		printf("\n\nYour Rider details:\nName=Faheem Nazim\nContact.No=03306149498\n\n");
+	}
+	
+	int details;
+	
+	printf("\nIf you want to told anything to the rider Press 1,otherwise Press 0 to Continue:\n");
+	scanf("%d",&details);
+	
+	if(details==1){
+	printf("\nEnter Your Details:\n");
+	scanf("%s",&mess);
+    }else{
+	Sleep(1000);
+    }
+	printf("\nYour Order is on the Way!");
+	Sleep(3000);
+	
+	
+	timer(check);
+	
+}
+
+
+void timer(int check){
+	
+	int m1=30,m2=45,s=0;
+	if(check==0){
+     	printf("\n\n");
+		 while(1) 
+        	{
+					printf("     \r%d:%d",m1,s);
+					Sleep(1000); //it is approximately 1 second
+					if(s!=0)
+					{
+						s--;
+					}
+					if(s==0 && m1!=0)
+					{
+						s=59;
+						m1--;
+					}
+					if(s==0 && m1==0)
+					{
+						
+						m1=59;
+						s=59;
+					}
+					if( m1==0 && s==0)
+					{
+						printf("\nYour Order has been Arrived!\n");
+						exit(0);
+					}
+				}
+		}else{
+			printf("\n\n");
+			while(1) 
+        	{
+					printf("     \r%d:%d",m2,s);
+					Sleep(1000); //it is approximately 1 second
+					if(s!=0)
+					{
+						s--;
+					}
+					if(s==0 && m2!=0)
+					{
+						s=59;
+						m2--;
+					}
+					if(s==0 && m2==0 )
+					{
+						
+						m2=59;
+						s=59;
+					}
+					if( m2==0 && s==0)
+					{
+						printf("Your Order Has been Arrived!");
+						exit(0);
+					}
+				}
+			}
+}
+			
+
+
+
+	
